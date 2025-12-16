@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useTheme } from '@/contexts/ThemeContext';
 import ToggleSwitch from './ToggleSwitch';
+import { MdOutlineArrowRightAlt } from 'react-icons/md';
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -24,7 +25,9 @@ const Header: React.FC = () => {
           </a>
           <button className="text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2" style={{ backgroundColor: '#17A2B8' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#138496'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#17A2B8'}>
             <span>JOIN US</span>
-            <span>→</span>
+            <span>
+              <MdOutlineArrowRightAlt size={20} />
+            </span>
           </button>
           
           {/* Theme Toggle Switch */}
