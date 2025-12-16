@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { useTheme } from '@/contexts/ThemeContext';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -24,14 +25,10 @@ const Home: React.FC = () => {
           </div>
           
           {/* Right Side - Illustration Placeholder */}
-          <div className={`hidden lg:flex items-center justify-center h-96 rounded-xl ${
+          <div className={`hidden lg:flex items-center justify-center  ${
             theme === 'dark' ? 'bg-gray-900' : 'bg-white'
-          } shadow-lg`}>
-            <p className={`text-lg ${
-              theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
-            }`}>
-              Salon Illustration Goes Here
-            </p>
+          } `}>
+            <Image src="/LandingSideImage.png" alt="Landing illustration" width={710} height={710}/>
           </div>
         </div>
       </main>

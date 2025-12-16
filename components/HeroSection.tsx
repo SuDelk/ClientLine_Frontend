@@ -20,7 +20,7 @@ const HeroSection: React.FC = () => {
         <p>and Nail Artists to streamline scheduling and boost revenue.</p>
       </div>
 
-      <button className="bg-teal-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors w-fit">
+      <button className="text-white px-8 py-3 rounded-lg font-semibold transition-colors w-fit" style={{ backgroundColor: '#17A2B8' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#138496'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#17A2B8'}>
         LOGIN
       </button>
     </section>
