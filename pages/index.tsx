@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       }`}
     >
       {/* Header */}
-      <Header />
+      <Header page="home" />
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-12">

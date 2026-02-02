@@ -4,7 +4,11 @@ import { useTheme } from "@/contexts/ThemeContext";
 import ToggleSwitch from "../common/ToggleSwitch";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  page: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ page }) => {
   const { theme } = useTheme();
 
   return (
@@ -21,13 +25,13 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <a
             href="#"
-            className={`${theme === "dark" ? "text-white" : "text-gray-900"} font-bold hover:text-[#17A2B8] transition-colors duration-200`}
+            className={`${page == "home" ? "text-[#138496]" : theme === "dark" ? "text-white" : "text-gray-900"} font-bold hover:text-[#17A2B8] transition-colors duration-200`}
           >
-            Home
+            HOME
           </a>
           <a
-            href="#"
-            className={`${theme === "dark" ? "text-white" : "text-gray-900"} font-bold hover:text-[#17A2B8] transition-colors duration-200`}
+            href="./login"
+            className={`${page == "login" ? "text-[#138496]" : theme === "dark" ? "text-white" : "text-gray-900"} font-bold hover:text-[#17A2B8] transition-colors duration-200`}
           >
             LOGIN
           </a>
