@@ -4,6 +4,7 @@ import { useTheme } from "@/contexts/ThemeContext";
 import Header from "@/components/home/Header";
 import HeroSection from "@/components/home/HeroSection";
 import FeatureCards from "@/components/home/FeatureCards";
+import Footer from "@/components/common/Footer";
 
 const Home: React.FC = () => {
   const { theme } = useTheme();
@@ -43,15 +44,7 @@ const Home: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="text-center py-8">
-        <p
-          className={`text-sm ${
-            theme === "dark" ? "text-gray-400" : "text-gray-600"
-          }`}
-        >
-          Copyright © 2025 ClientLine. All rights reserved.
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 };

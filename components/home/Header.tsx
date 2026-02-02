@@ -18,7 +18,9 @@ const Header: React.FC<HeaderProps> = ({ page }) => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <Image src={"/Logo.png"} alt="logo" width={324} height={88} />
+          <a href="#">
+            <Image src={"/Logo.png"} alt="logo" width={324} height={88} />
+          </a>
         </div>
 
         {/* Navigation */}
@@ -27,13 +29,13 @@ const Header: React.FC<HeaderProps> = ({ page }) => {
             href="#"
             className={`${page == "home" ? "text-[#138496]" : theme === "dark" ? "text-white" : "text-gray-900"} font-bold hover:text-[#17A2B8] transition-colors duration-200`}
           >
-            HOME
+            Home
           </a>
           <a
             href="./login"
             className={`${page == "login" ? "text-[#138496]" : theme === "dark" ? "text-white" : "text-gray-900"} font-bold hover:text-[#17A2B8] transition-colors duration-200`}
           >
-            LOGIN
+            Login
           </a>
           <button
             className="text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2"
