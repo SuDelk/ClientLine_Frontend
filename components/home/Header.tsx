@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTheme } from "@/contexts/ThemeContext";
 import ToggleSwitch from "../common/ToggleSwitch";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
@@ -18,25 +19,25 @@ const Header: React.FC<HeaderProps> = ({ page }) => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <a href="#">
+          <Link href="/">
             <Image src={"/Logo.png"} alt="logo" width={324} height={88} />
-          </a>
+          </Link>
         </div>
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a
-            href="#"
+          <Link
+            href="/"
             className={`${page == "home" ? "text-[#138496]" : theme === "dark" ? "text-white" : "text-gray-900"} font-bold hover:text-[#17A2B8] transition-colors duration-200`}
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="./login"
             className={`${page == "login" ? "text-[#138496]" : theme === "dark" ? "text-white" : "text-gray-900"} font-bold hover:text-[#17A2B8] transition-colors duration-200`}
           >
             Login
-          </a>
+          </Link>
           <button
             className="text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2"
             style={{ backgroundColor: "#17A2B8" }}
