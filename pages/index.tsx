@@ -1,20 +1,23 @@
-import React from 'react';
-import Image from 'next/image';
-import { useTheme } from '@/contexts/ThemeContext';
-import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
-import FeatureCards from '@/components/FeatureCards';
+import React from "react";
+import Image from "next/image";
+import { useTheme } from "@/contexts/ThemeContext";
+import Header from "@/components/home/Header";
+import HeroSection from "@/components/home/HeroSection";
+import FeatureCards from "@/components/home/FeatureCards";
+import Footer from "@/components/common/Footer";
 
 const Home: React.FC = () => {
   const { theme } = useTheme();
 
   return (
-     <div className={`min-h-screen transition-colors duration-300 ${
-      theme === 'dark' ? 'bg-black' : 'bg-gray-50'
-    }`}>
+    <div
+      className={`min-h-screen transition-colors duration-300 ${
+        theme === "dark" ? "bg-black" : "bg-gray-50"
+      }`}
+    >
       {/* Header */}
-      <Header />
-      
+      <Header page="home" />
+
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -23,24 +26,25 @@ const Home: React.FC = () => {
             <HeroSection />
             <FeatureCards />
           </div>
-          
+
           {/* Right Side - Illustration Placeholder */}
-          <div className={`hidden lg:flex items-center justify-center  ${
-            theme === 'dark' ? 'bg-gray-900' : 'bg-white'
-          } `}>
-            <Image src="/LandingSideImage.png" alt="Landing illustration" width={710} height={710}/>
+          <div
+            className={`hidden lg:flex items-center justify-center  ${
+              theme === "dark" ? "bg-gray-900" : "bg-white"
+            } `}
+          >
+            <Image
+              src="/LandingSideImage.png"
+              alt="Landing illustration"
+              width={710}
+              height={710}
+            />
           </div>
         </div>
       </main>
-      
+
       {/* Footer */}
-      <footer className="text-center py-8">
-        <p className={`text-sm ${
-          theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-        }`}>
-          Copyright © 2025 ClientLine. All rights reserved.
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 };
