@@ -53,12 +53,12 @@ const Login: React.FC = () => {
                   <input
                     type="email"
                     required
-                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border transition-colors ${
+                    className={`text-gray-900 w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border transition-colors ${
                       theme === "dark"
-                        ? "bg-white border-gray-600 text-white placeholder-gray-400 focus:border-[#17A2B8]"
-                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-[#17A2B8]"
+                        ? "bg-white border-gray-600 placeholder-gray-400 focus:border-[#17A2B8]"
+                        : "bg-white border-gray-300 placeholder-gray-500 focus:border-[#17A2B8]"
                     } focus:outline-none focus:ring-2 focus:ring-[#17A2B8]/20`}
-                    placeholder="username@example.com"
+                    placeholder="user@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -74,12 +74,12 @@ const Login: React.FC = () => {
                   <input
                     type="password"
                     required
-                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border transition-colors ${
+                    className={`text-gray-900 w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border transition-colors ${
                       theme === "dark"
-                        ? "bg-white border-gray-600 text-white placeholder-gray-400 focus:border-[#17A2B8]"
-                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-[#17A2B8]"
+                        ? "bg-white border-gray-600 placeholder-gray-400 focus:border-[#17A2B8]"
+                        : "bg-white border-gray-300 placeholder-gray-500 focus:border-[#17A2B8]"
                     } focus:outline-none focus:ring-2 focus:ring-[#17A2B8]/20`}
-                    placeholder="user password"
+                    placeholder="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -108,7 +108,7 @@ const Login: React.FC = () => {
                   (e.currentTarget.style.backgroundColor = "#17A2B8")
                 }
               >
-                Sign in
+                Login
               </button>
 
               <div className="text-center">
