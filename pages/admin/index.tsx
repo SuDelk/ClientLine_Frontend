@@ -48,7 +48,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           <div className={`rounded-lg shadow-sm p-6 ${
             theme === "dark" ? "bg-gray-800" : "bg-white"
           }`}>

@@ -21,11 +21,11 @@ const Login: React.FC = () => {
     >
       <Header page="login" />
 
-      <main className="flex-1 flex items-center justify-center px-6 py-12">
-        <div className="max-w-md w-full space-y-8">
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
+        <div className="max-w-md w-full space-y-6 sm:space-y-8">
           <div className="text-center">
             <h2
-              className={`text-3xl font-bold ${
+              className={`text-2xl sm:text-3xl font-bold ${
                 theme === "dark" ? "text-white" : "text-gray-900"
               }`}
             >
@@ -33,7 +33,7 @@ const Login: React.FC = () => {
             </h2>
           </div>
 
-          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <form className="mt-6 sm:mt-8 space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div>
                 <input
