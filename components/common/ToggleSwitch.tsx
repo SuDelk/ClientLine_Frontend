@@ -13,7 +13,7 @@ export default function ToggleSwitch() {
       />
       <div
         className={`w-16 h-8 rounded-full peer transition-colors duration-200 ${
-          theme === "dark" ? "bg-[#17A2B8]/50" : "bg-slate-700"
+          theme === "dark" ? "bg-[#17A2B8]/50" : "bg-gray-400"
         }`}
       ></div>
       <span
