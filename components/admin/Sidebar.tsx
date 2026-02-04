@@ -10,6 +10,7 @@ import {
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useTheme } from "../../contexts/ThemeContext";
+import ToggleSwitch from "../common/ToggleSwitch";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -127,16 +128,19 @@ const Sidebar = () => {
             <FiSettings className="w-5 h-5" />
             <span className="font-medium">Settings</span>
           </a>
-          <button
-            className={`flex items-center space-x-3 px-4 py-3 w-full text-white rounded-lg ${
-              theme === "dark"
-                ? "bg-gray-700 hover:bg-gray-600"
-                : "bg-gray-600 hover:bg-gray-700"
-            }`}
-          >
-            <FiLogOut className="w-5 h-5" />
-            <span className="font-medium">Logout</span>
-          </button>
+          <div className="flex ml-4 items-center justify-between mt-4 space-x-2">
+            <button
+              className={`flex items-center space-x-3 px-4 py-3 w-full text-white rounded-lg ${
+                theme === "dark"
+                  ? "bg-gray-700 hover:bg-gray-600"
+                  : "bg-gray-600 hover:bg-gray-700"
+              }`}
+            >
+              <FiLogOut className="w-5 h-5" />
+              <span className="font-medium">Logout</span>
+            </button>
+            <ToggleSwitch />
+          </div>
         </div>
       </nav>
     </div>

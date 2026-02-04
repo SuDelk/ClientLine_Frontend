@@ -9,13 +9,13 @@ const Users = () => {
   return (
     <AdminLayout>
       <div className="space-y-6">
-        <div className="flex justify-between items-center">
-          <h1 className={`text-2xl font-bold ${
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+          <h1 className={`text-xl sm:text-2xl font-bold ${
             theme === "dark" ? "text-white" : "text-gray-900"
           }`}>Users</h1>
           <button 
             onClick={() => setShowAddForm(true)}
-            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 w-full sm:w-auto"
           >
             Add New User
           </button>
@@ -23,7 +23,7 @@ const Users = () => {
 
         {/* Add User Form */}
         {showAddForm && (
-          <div className={`rounded-lg shadow-sm p-6 ${
+          <div className={`rounded-lg shadow-sm p-4 sm:p-6 ${
             theme === "dark" ? "bg-gray-800" : "bg-white"
           }`}>
             <div className="flex justify-between items-center mb-4">
@@ -37,7 +37,7 @@ const Users = () => {
                 ✕
               </button>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className={`block text-sm font-medium mb-2 ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
@@ -83,7 +83,7 @@ const Users = () => {
                 }`} placeholder="Enter phone number" />
               </div>
             </div>
-            <div className="flex space-x-3 mt-4">
+            <div className="flex flex-col sm:flex-row gap-3 mt-4">
               <button className="px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600">
                 Add User
               </button>
@@ -98,10 +98,11 @@ const Users = () => {
         )}
         
         {/* Users List */}
-        <div className={`rounded-lg shadow-sm p-6 ${
+        <div className={`rounded-lg shadow-sm p-4 sm:p-6 ${
           theme === "dark" ? "bg-gray-800" : "bg-white"
         }`}>
-          <div className="space-y-4">
+          {/* Desktop Table */}
+          <div className="hidden md:block space-y-4">
             <div className="grid grid-cols-5 gap-4 p-4 border-b">
               <div className={`font-medium ${
                 theme === "dark" ? "text-white" : "text-gray-900"
@@ -150,6 +151,54 @@ const Users = () => {
               <div className="space-x-2">
                 <button className="text-blue-500 hover:underline">Edit</button>
                 <button className="text-red-500 hover:underline">Delete</button>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-4">
+            <div className={`p-4 rounded-lg border ${
+              theme === "dark" ? "border-gray-700" : "border-gray-200"
+            }`}>
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-teal-500 font-medium">John Doe</h3>
+                <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Active</span>
+              </div>
+              <p className="text-teal-500 text-sm mb-1">john@example.com</p>
+              <p className="text-teal-500 text-sm mb-3">Admin</p>
+              <div className="flex space-x-2">
+                <button className="text-blue-500 hover:underline text-sm">Edit</button>
+                <button className="text-red-500 hover:underline text-sm">Delete</button>
+              </div>
+            </div>
+            
+            <div className={`p-4 rounded-lg border ${
+              theme === "dark" ? "border-gray-700" : "border-gray-200"
+            }`}>
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-teal-500 font-medium">Jane Smith</h3>
+                <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Active</span>
+              </div>
+              <p className="text-teal-500 text-sm mb-1">jane@example.com</p>
+              <p className="text-teal-500 text-sm mb-3">Manager</p>
+              <div className="flex space-x-2">
+                <button className="text-blue-500 hover:underline text-sm">Edit</button>
+                <button className="text-red-500 hover:underline text-sm">Delete</button>
+              </div>
+            </div>
+            
+            <div className={`p-4 rounded-lg border ${
+              theme === "dark" ? "border-gray-700" : "border-gray-200"
+            }`}>
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-teal-500 font-medium">Mike Johnson</h3>
+                <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Pending</span>
+              </div>
+              <p className="text-teal-500 text-sm mb-1">mike@example.com</p>
+              <p className="text-teal-500 text-sm mb-3">Staff</p>
+              <div className="flex space-x-2">
+                <button className="text-blue-500 hover:underline text-sm">Edit</button>
+                <button className="text-red-500 hover:underline text-sm">Delete</button>
               </div>
             </div>
           </div>

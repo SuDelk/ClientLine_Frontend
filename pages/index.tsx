@@ -19,17 +19,17 @@ const Home: React.FC = () => {
       <Header page="home" />
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Side - Hero + Feature Cards */}
-          <div className="space-y-12">
+          <div className="space-y-8 lg:space-y-12">
             <HeroSection />
             <FeatureCards />
           </div>
 
           {/* Right Side - Illustration Placeholder */}
           <div
-            className={`hidden lg:flex items-center justify-center  ${
+            className={`flex items-center justify-center lg:block ${
               theme === "dark" ? "bg-gray-900" : "bg-white"
             } `}
           >
@@ -38,6 +38,7 @@ const Home: React.FC = () => {
               alt="Landing illustration"
               width={710}
               height={710}
+              className="w-full max-w-md lg:max-w-none h-auto"
             />
           </div>
         </div>
