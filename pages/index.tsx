@@ -11,7 +11,7 @@ const Home: React.FC = () => {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-300 ${
+      className={`min-h-screen transition-colors duration-300 pt-20 ${
         theme === "dark" ? "bg-black" : "bg-gray-50"
       }`}
     >

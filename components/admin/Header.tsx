@@ -11,7 +11,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
 
   return (
     <header
-      className={`border-b px-4 lg:px-6 py-4 ${
+      className={`border-b px-4 lg:px-6 py-4 fixed top-0 left-0 right-0 z-40 ${
         theme === "dark"
           ? "bg-gray-800 border-gray-700"
           : "bg-white border-gray-200"

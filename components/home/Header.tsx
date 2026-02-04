@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ page }) => {
 
   return (
     <header
-      className={`w-full px-4 sm:px-6 py-4 ${theme === "dark" ? "bg-black" : "bg-white"} transition-colors duration-300`}
+      className={`w-full px-4 sm:px-6 py-4 fixed top-0 left-0 right-0 z-50 ${theme === "dark" ? "bg-black" : "bg-white"} transition-colors duration-300`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
