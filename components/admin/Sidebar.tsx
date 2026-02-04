@@ -2,6 +2,7 @@ import {
   FiGrid,
   FiHome,
   FiCalendar,
+  FiUsers,
   FiLifeBuoy,
   FiSettings,
   FiLogOut,
@@ -9,6 +10,7 @@ import {
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useTheme } from "../../contexts/ThemeContext";
+import ToggleSwitch from "../common/ToggleSwitch";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -19,15 +21,19 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`w-64 h-screen shadow-sm border-r ${
-      theme === "dark" 
-        ? "bg-gray-800 border-gray-700" 
-        : "bg-white border-gray-200"
-    }`}>
+    <div
+      className={`w-64 h-screen shadow-sm border-r ${
+        theme === "dark"
+          ? "bg-gray-800 border-gray-700"
+          : "bg-white border-gray-200"
+      }`}
+    >
       {/* Logo */}
-      <div className={`px-6 border-b h-20 flex items-center -m-2 ${
-        theme === "dark" ? "border-gray-700" : "border-gray-200"
-      }`}>
+      <div
+        className={`px-6 border-b h-20 flex items-center -m-2 ${
+          theme === "dark" ? "border-gray-700" : "border-gray-200"
+        }`}
+      >
         <Image
           src="/Logo.png"
           alt="ClientLine"
@@ -46,8 +52,8 @@ const Sidebar = () => {
               isActive("/admin")
                 ? "bg-blue-50 text-blue-600"
                 : theme === "dark"
-                ? "text-gray-300 hover:bg-gray-700"
-                : "text-gray-600 hover:bg-gray-50"
+                  ? "text-gray-300 hover:bg-gray-700"
+                  : "text-gray-600 hover:bg-gray-50"
             }`}
           >
             <FiGrid className="w-5 h-5" />
@@ -59,8 +65,8 @@ const Sidebar = () => {
               isActive("/admin/organizations")
                 ? "bg-blue-50 text-blue-600"
                 : theme === "dark"
-                ? "text-gray-300 hover:bg-gray-700"
-                : "text-gray-600 hover:bg-gray-50"
+                  ? "text-gray-300 hover:bg-gray-700"
+                  : "text-gray-600 hover:bg-gray-50"
             }`}
           >
             <FiHome className="w-5 h-5" />
@@ -72,12 +78,25 @@ const Sidebar = () => {
               isActive("/admin/appointments")
                 ? "bg-blue-50 text-blue-600"
                 : theme === "dark"
-                ? "text-gray-300 hover:bg-gray-700"
-                : "text-gray-600 hover:bg-gray-50"
+                  ? "text-gray-300 hover:bg-gray-700"
+                  : "text-gray-600 hover:bg-gray-50"
             }`}
           >
             <FiCalendar className="w-5 h-5" />
             <span className="font-medium">Appointments</span>
+          </a>
+          <a
+            href="/admin/users"
+            className={`flex items-center space-x-3 px-4 py-3 rounded-lg ${
+              isActive("/admin/users")
+                ? "bg-blue-50 text-blue-600"
+                : theme === "dark"
+                  ? "text-gray-300 hover:bg-gray-700"
+                  : "text-gray-600 hover:bg-gray-50"
+            }`}
+          >
+            <FiUsers className="w-5 h-5" />
+            <span className="font-medium">Users</span>
           </a>
         </div>
 
@@ -89,8 +108,8 @@ const Sidebar = () => {
               isActive("/admin/support")
                 ? "bg-blue-50 text-blue-600"
                 : theme === "dark"
-                ? "text-gray-300 hover:bg-gray-700"
-                : "text-gray-600 hover:bg-gray-50"
+                  ? "text-gray-300 hover:bg-gray-700"
+                  : "text-gray-600 hover:bg-gray-50"
             }`}
           >
             <FiLifeBuoy className="w-5 h-5" />
@@ -102,19 +121,26 @@ const Sidebar = () => {
               isActive("/admin/settings")
                 ? "bg-blue-50 text-blue-600"
                 : theme === "dark"
-                ? "text-gray-300 hover:bg-gray-700"
-                : "text-gray-600 hover:bg-gray-50"
+                  ? "text-gray-300 hover:bg-gray-700"
+                  : "text-gray-600 hover:bg-gray-50"
             }`}
           >
             <FiSettings className="w-5 h-5" />
             <span className="font-medium">Settings</span>
           </a>
-          <button className={`flex items-center space-x-3 px-4 py-3 w-full text-white rounded-lg ${
-            theme === "dark" ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-600 hover:bg-gray-700"
-          }`}>
-            <FiLogOut className="w-5 h-5" />
-            <span className="font-medium">Logout</span>
-          </button>
+          <div className="flex ml-4 items-center justify-between mt-4 space-x-2">
+            <button
+              className={`flex items-center space-x-3 px-4 py-3 w-full text-white rounded-lg ${
+                theme === "dark"
+                  ? "bg-gray-700 hover:bg-gray-600"
+                  : "bg-gray-600 hover:bg-gray-700"
+              }`}
+            >
+              <FiLogOut className="w-5 h-5" />
+              <span className="font-medium">Logout</span>
+            </button>
+            <ToggleSwitch />
+          </div>
         </div>
       </nav>
     </div>
